@@ -8,7 +8,7 @@ This project integrates **image captioning** and **image segmentation** using de
 
 ---
 
-## 🔧 Features
+## Features
 
 - Caption generation using Custom Encoder and Decoder CNN model
 - Object segmentation using **Mask R-CNN** (pretrained on COCO)
@@ -27,6 +27,9 @@ ZIDIO_Task1/
 │   ├── utils.py              # Core functions (captioning & segmentation)
 │   └── download_models.py    # Script to download model weights
 │
+├── captioning/               # Captioning training model data and code
+├── segmentation/             # Segmentation training model data and code
+├── images/                   # Test images and loss function plot
 ├── requirements.txt          # All required Python libraries
 ├── README.md                 # Project overview and instructions
 ```
@@ -42,15 +45,15 @@ ZIDIO_Task1/
 
 ---
 
-## 🧠 Model Architectures
+## Model Architectures
 
 This section outlines the architecture of the deep learning models used for image captioning and image segmentation in the project.
 
 ---
 
-### 🖼️ Image Captioning Model
+### Image Captioning Model
 
-#### 📌 **Architecture Used**  
+#### **Architecture Used**  
 **Encoder–Decoder architecture with CNN-RNN**
 
 - **Encoder:** Pretrained **ResNet-50**
@@ -75,9 +78,9 @@ This section outlines the architecture of the deep learning models used for imag
 
 ---
 
-### 🖍️ Image Segmentation Model
+### Image Segmentation Model
 
-#### 📌 **Architecture Used**  
+#### **Architecture Used**  
 **Mask R-CNN with ResNet-50 + FPN**
 
 - **Base Model:** Mask R-CNN (Facebook AI Research)
@@ -144,20 +147,8 @@ streamlit run app.py
 
 ---
 
-## 📄 Requirements
 
-Make sure the following libraries are installed (handled via `requirements.txt`):
-```
-streamlit
-torch
-torchvision
-transformers
-Pillow
-```
-
----
-
-## 🔗 Repository
+## Repository
 
 **GitHub**: [https://github.com/Rishikesh4089/VisioAI](https://github.com/Rishikesh4089/VisioAI)
 
