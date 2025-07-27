@@ -123,7 +123,17 @@ pip install -r ../requirements.txt
 python download_models.py
 ```
 
-### 4. Run the Streamlit app:
+### 4. Download the coco API 
+```bash
+cd cocoapi/PythonAPI  
+make  
+cd ..
+```
+Download MS-COCO 2017 data from here: http://cocodataset.org/#download 
+Download Pascal VOC 2012 data from here: https://www.kaggle.com/datasets/gopalbhattrai/pascal-voc-2012-dataset
+
+
+### 5. Run the Streamlit app:
 ```bash
 streamlit run app.py
 ```
