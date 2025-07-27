@@ -1,0 +1,12 @@
+captioning/models/
+captioning/nltk_data/
+captioning/captioner.pt
+captioning/cocoapi/
+venv/
+__pycache__/
+segmentation/models/
+segmentation/content/
+app/__pycache__/
+app/utils/
+testcode.py
+*.pyc
