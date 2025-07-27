@@ -37,10 +37,70 @@ ZIDIO_Task1/
 
 | Task         | Model                                                                                                      |
 |--------------|------------------------------------------------------------------------------------------------------------|
-| Captioning   | [`Salesforce/blip-image-captioning-base`](https://huggingface.co/Salesforce/blip-image-captioning-base)    |
+| Captioning   | `Encoder-Decoder with CNN + RNN (LSTM)`                                                                    |
 | Segmentation | `Mask R-CNN (ResNet-50 FPN)` pretrained on the COCO dataset                                                |
 
 ---
+
+## 🧠 Model Architectures
+
+This section outlines the architecture of the deep learning models used for image captioning and image segmentation in the project.
+
+---
+
+### 🖼️ Image Captioning Model
+
+#### 📌 **Architecture Used**  
+**Encoder–Decoder architecture with CNN-RNN**
+
+- **Encoder:** Pretrained **ResNet-50**
+  - Extracts image features.
+  - Final fully connected layer removed.
+  - Output passed through a linear layer and batch normalization to produce fixed-size embeddings.
+  
+- **Decoder:** LSTM-based language model
+  - Takes image feature vector as input.
+  - Generates captions word by word using an embedding layer, LSTM, and linear classifier.
+
+#### ⚙️ **Key Components**
+
+| Component        | Description                                                                 |
+|------------------|-----------------------------------------------------------------------------|
+| ResNet-50        | CNN backbone for feature extraction (pretrained, frozen)                    |
+| Linear Layer     | Projects features to embedding space                                        |
+| BatchNorm1d      | Normalizes the embedding vector                                             |
+| LSTM             | Sequential decoder that generates a caption                                |
+| Word Embedding   | Converts input tokens into vectors                                          |
+| Linear Classifier| Outputs vocabulary distribution per time step                              |
+
+---
+
+### 🖍️ Image Segmentation Model
+
+#### 📌 **Architecture Used**  
+**Mask R-CNN with ResNet-50 + FPN**
+
+- **Base Model:** Mask R-CNN (Facebook AI Research)
+- **Backbone:** ResNet-50 with Feature Pyramid Network (FPN)
+- **Function:** Performs object detection and instance-level segmentation.
+
+#### ⚙️ **Key Components**
+
+| Component          | Description                                                                   |
+|--------------------|-------------------------------------------------------------------------------|
+| ResNet-50          | Feature extractor for input images                                            |
+| Feature Pyramid Net| Enhances feature maps at multiple scales                                      |
+| RPN                | Region Proposal Network that suggests candidate object regions                |
+| RoIAlign           | Precisely aligns features with proposed bounding boxes (better than RoIPool) |
+| Classifier         | Predicts object class                                                         |
+| BBox Regressor     | Refines bounding boxes                                                        |
+| Mask Head          | Generates pixel-wise segmentation mask for each detected object               |
+
+
+
+---
+
+
 
 ## Getting Started
 
