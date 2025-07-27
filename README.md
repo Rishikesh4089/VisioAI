@@ -1,4 +1,4 @@
-\#  ZIDIO Internship Task: Image Captioning \& Segmentation App
+#  ZIDIO Internship Task: Image Captioning \& Segmentation App
 
 
 
@@ -6,27 +6,27 @@ This project combines image captioning and image segmentation using deep learnin
 
 
 
-\-  Automatically generate a caption
+-  Automatically generate a caption
 
-\-  Highlight segmented objects in the image
-
-
+-  Highlight segmented objects in the image
 
 
 
 
 
-\##  Features
+
+
+##  Features
 
 
 
-\-  Caption generation using BLIP (Salesforce model)
+-  Caption generation using BLIP (Salesforce model)
 
-\-  Segmentation using Mask R-CNN
+-  Segmentation using Mask R-CNN
 
-\-  Streamlit-based user interface
+-  Streamlit-based user interface
 
-\-  Upload any type of image (person, object, animal, etc.)
+-  Upload any type of image (person, object, animal, etc.)
 
 
 
@@ -36,7 +36,7 @@ This project combines image captioning and image segmentation using deep learnin
 
 
 
-\## Project Structure 
+## Project Structure 
 
 
 
@@ -60,7 +60,7 @@ ZIDIO\_Task1/
 
 
 
-\##  Models Used
+##  Models Used
 
 
 
@@ -78,11 +78,11 @@ ZIDIO\_Task1/
 
 
 
-\##  How to Run Locally
+##  How to Run Locally
 
 
 
-\###  Clone the repository:
+###  Clone the repository:
 
 
 
@@ -138,7 +138,7 @@ Captioning: MS COCO
 Segmentation: Pascal VOC 2012
 
 
-Repo: https://github.com/Rishikesh4089/ZIDIO_Task1
+Repo: https://github.com/Rishikesh4089/VisioAI
 
 
 
