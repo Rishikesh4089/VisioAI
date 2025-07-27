@@ -1,154 +1,110 @@
-#  ZIDIO Internship Task: Image Captioning \& Segmentation App
 
+# VisioAI: Image Captioning & Segmentation App
 
+This project integrates **image captioning** and **image segmentation** using deep learning techniques. It enables users to upload an image and:
 
-This project combines image captioning and image segmentation using deep learning and computer vision. The application allows users to upload any image and:
-
-
-
--  Automatically generate a caption
-
--  Highlight segmented objects in the image
-
-
-
-
-
-
-
-##  Features
-
-
-
--  Caption generation using BLIP (Salesforce model)
-
--  Segmentation using Mask R-CNN
-
--  Streamlit-based user interface
-
--  Upload any type of image (person, object, animal, etc.)
-
-
-
-
+- Automatically **generate a descriptive caption**
+- **Segment** and **highlight objects** (e.g., people, animals, objects) within the image
 
 ---
 
+## 🔧 Features
 
+- Caption generation using Custom Encoder and Decoder CNN model
+- Object segmentation using **Mask R-CNN** (pretrained on COCO)
+- Clean, interactive **Streamlit** web app UI
+- Upload any image (person, object, animal, etc.) and get instant results
 
-## Project Structure 
+---
 
+## Project Structure
 
-
-ZIDIO\_Task1/
-
+```
+ZIDIO_Task1/
 │
-
-├── app/                        # Main app 
-
-│   ├── app.py                  # Streamlit UI 
-
-│   ├── utils.py                # Functions for captioning and segmentation
-
-│   └── download\_models.py      # Script to automatically download model weights
-
+├── app/                      # Main application directory
+│   ├── app.py                # Streamlit UI logic
+│   ├── utils.py              # Core functions (captioning & segmentation)
+│   └── download_models.py    # Script to download model weights
 │
+├── requirements.txt          # All required Python libraries
+├── README.md                 # Project overview and instructions
+```
 
-├── requirements.txt            # All Python libraries 
+---
 
-├── README.md  
+## Models Used
 
+| Task         | Model                                                                                                      |
+|--------------|------------------------------------------------------------------------------------------------------------|
+| Captioning   | [`Salesforce/blip-image-captioning-base`](https://huggingface.co/Salesforce/blip-image-captioning-base)    |
+| Segmentation | `Mask R-CNN (ResNet-50 FPN)` pretrained on the COCO dataset                                                |
 
+---
 
-##  Models Used
+## Getting Started
 
-
-
-| Task             | Model                                                                                                   |
-
-|------------------|---------------------------------------------------------------------------------------------------------|
-
-| Captioning       | \[`Salesforce/blip-image-captioning-base`](https://huggingface.co/Salesforce/blip-image-captioning-base) |
-
-| Segmentation     | `Mask R-CNN (ResNet-50 FPN)` pretrained on COCO dataset                                                 |
-
-
-
-
-
-
-
-##  How to Run Locally
-
-
-
-###  Clone the repository:
-
-
-
+### 1. Clone the repository:
 ```bash
+git clone https://github.com/Rishikesh4089/ZIDIO_Task1.git
+cd ZIDIO_Task1/app
+```
 
-git clone https://github.com/Rishikesh4089/ZIDIO\_Task1.git
+### 2. Install dependencies:
+```bash
+pip install -r ../requirements.txt
+```
 
-cd ZIDIO\_Task1/app
+### 3. Download pre-trained models:
+```bash
+python download_models.py
+```
 
-
-Install dependencies
-
-
- pip install -r ../requirements.txt
-
-
-Download the models:
-
- python download_models.py
-
-
-Run the Streamlit app:
-
-
+### 4. Run the Streamlit app:
+```bash
 streamlit run app.py
+```
 
+---
 
+## Example Use Cases
 
-| Input Image                         | Caption                         | Segmentation         |
-| ------------------------------------| --------------------------------| ---------------------|
-|  A dog and a cat sitting on a bench | “Cat and Dog on bench”         |  Objects outlined     |
-|  Food Image                         | “A plate of delicious pizza”   |  Food segmented       |
-|  Person Image                       | “A man working on a laptop”    |  Person highlighted   |
+| Input Image   | Caption                        | Segmentation              |
+|---------------|--------------------------------|---------------------------|
+| A dog and cat | “Cat and dog on a bench”       | Outlined animals          |
+| Food          | “A plate of delicious pizza”   | Segmented food elements   |
+| Person        | “A man working on a laptop”    | Person highlighted        |
 
+---
 
+## Datasets Used
 
- Requirements
-Install from requirements.txt:
+- **Captioning**: MS COCO Dataset  
+- **Segmentation**: Pascal VOC 2012
 
-text
-Copy code
+---
+
+## 📄 Requirements
+
+Make sure the following libraries are installed (handled via `requirements.txt`):
+```
 streamlit
 torch
 torchvision
 transformers
 Pillow
-
-
-Datasets
-
-Captioning: MS COCO  
-
-Segmentation: Pascal VOC 2012
-
-
-Repo: https://github.com/Rishikesh4089/VisioAI
-
-
-
-
-Status
-
- Completed and ready for internship submission.
- Supports captioning and segmentation for all general images.
+```
 
 ---
 
- 
+## 🔗 Repository
 
+**GitHub**: [https://github.com/Rishikesh4089/VisioAI](https://github.com/Rishikesh4089/VisioAI)
+
+---
+
+## Project Status
+
+- **Completed**
+- Supports all general image types
+- Tested locally and ready for internship submission
